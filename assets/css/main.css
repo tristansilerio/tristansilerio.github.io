@@ -50,7 +50,18 @@ svg,img { max-width: 100%; height: auto; }
 	animation: fade-in 1s ease-out;
   }
   
-  
+.hidden {
+	opacity: 0;
+	filter: blur(5px);
+	transform: translateX(-100%);
+	transition: all 2s;
+}
+
+.show {
+	opacity: 1;
+	filter: blur(0);
+	transform: translateX(0);
+}
 .ds-header {
 	position: fixed;
 	top: 0;
@@ -207,10 +218,12 @@ svg,img { max-width: 100%; height: auto; }
   
   .mode-switch-checkbox:checked + .mode-switch-label .mode-switch-inner {
 	background-color: #fff;
+	
   }
   
   .mode-switch-checkbox:checked + .mode-switch-label .mode-switch-switch {
 	transform: translateX(24px);
+	background-color: #000;
   }
 
   .dark-mode {
@@ -316,12 +329,17 @@ svg,img { max-width: 100%; height: auto; }
   3. >>> About Style
 ----------------------------------------------------------------*/
 .ds-about-section{ padding-top: 60px; padding-bottom: 60px; }
-.ds-heading{ display: inline-block; font-weight: 700; color: #000; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; border-bottom: 3px solid #ad64f2; padding-bottom: 7px; margin-bottom: 23px; }
+.ds-heading{ display: inline-block; font-weight: 700; color: #000; text-transform: uppercase; letter-spacing: 1px; font-size: 13px; border-bottom: 3px solid #ad64f2; padding-bottom: 7px; margin-bottom: 23px; transition: transform 0.5s ease;}
 .ds-about-section p{ color: #373737; font-size: 24px; line-height: 40px; font-weight: 300;}
 .ds-button{ display: inline-block; text-transform: uppercase;font-size: 12px;line-height: 13px;font-weight: 600;letter-spacing: 3px; color:#ad64f2; padding:17px 30px;  border: 2px solid #ad64f2;border-radius: 60px; }
 .ds-button:hover{ background-color:#ad64f2 ; color: #FFF; }
 .ds-arrow-button i{ display: inline-block; vertical-align: middle; }
 
+.ds-heading:hover {
+	transform: scale(1.1);
+	font-weight: bold;
+  }
+  
 .dark-mode .ds-about-section {
 	padding-top: 60px;
   }
@@ -408,15 +426,21 @@ svg,img { max-width: 100%; height: auto; }
 ----------------------------------------------------------------*/
 .ds-experience-section {
 	padding-bottom: 60px;
-	
+
   }
   
   .ds-experience-list section {
 	padding-right: 70px;
-	border: 2px solid #ddd; /* Add border */
+	border: 1px solid #ddd; /* Add border */
 	border-radius: 8px; /* Add border radius */
 	padding: 20px; /* Adjust padding as needed */
+	transition: transform 0.3s ease;
   }
+
+.ds-experience-list section:hover {
+	border: 3px solid #ddd;
+	transform: translateY(-10px);
+}
   
 
 .ds-experience-list{ padding-top: 15px; }
@@ -471,7 +495,6 @@ span.ds-department{ color: #373737; font-weight: 500; font-size: 18px; padding-b
   
   .ds-work-list {
 	padding: 20px;
-	background-color: #F6F8FA;
 	margin-bottom: 40px;
   }
   
@@ -480,7 +503,14 @@ span.ds-department{ color: #373737; font-weight: 500; font-size: 18px; padding-b
 	border: 1px solid #ddd;
 	border-radius: 5px;
 	margin-bottom: 20px;
+	transition: transform 0.3s ease;
   }
+
+  .ds-work-box:hover {
+	border: 3px solid #ddd;
+	transform: translateY(-10px); /* Adjust the translateY value to control the elevation */
+  }
+  
   
   .ds-work-list section {
 	padding: 20px;
@@ -493,11 +523,15 @@ span.ds-department{ color: #373737; font-weight: 500; font-size: 18px; padding-b
 	font-weight: 600;
 	margin-bottom: 20px;
   }
+
+  .dark-mode .ds-work-title {
+	color:  #ccc 
+  }
   
   .ds-work-list p {
 	font-weight: 300;
 	font-size: 20px;
-	line-height: 24px;
+	line-height: 2;
 	flex-grow: 1;
   }
   
@@ -566,6 +600,14 @@ span.ds-department{ color: #373737; font-weight: 500; font-size: 18px; padding-b
 	background-color: #373737;
   }
   
+  .ds-work-content-sec img {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	object-fit: contain; /* Change the object-fit value to 'contain' */
+  }
   .ds-other-projects-link {
 	display: flex;
 	justify-content: center;
@@ -714,4 +756,10 @@ span.ds-department{ color: #373737; font-weight: 500; font-size: 18px; padding-b
 	.ds-work-list section{ padding-right: 30px; padding-bottom:60px; }
 
 
+}
+
+@media(prefers-reduced-motion) {
+	.hidden {
+		transition:all 1s;
+	}
 }
