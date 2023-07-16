@@ -706,8 +706,8 @@ span.ds-department{ color: #373737; font-weight: 500; font-size: 18px; padding-b
 	.ds-logo{ font-size: 0; }
 	.ds-menu a{ font-size: 2.5vw;}
 	.dark-mode .ds-menu a {font-size: 2.5vw;}
-	.ds-banner section{ padding-left: 0;padding-right: 0; }
-	.ds-banner section h1 span{ padding-bottom: 0; }
+	.ds-banner section{ padding-left: 0;padding-right: 0;  margin-top: 26px;}
+	.ds-banner section h1 span{ padding-bottom: 0;  }
 	.ds-banner section h1,.ds-work-det-title{ font-size: 30px; line-height: 40px; }
 	.profile-picture {transform: scale(0.9); }
 	.ds-about-section{ padding-bottom: 60px; }
