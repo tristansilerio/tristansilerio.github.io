@@ -120,6 +120,7 @@ svg,img { max-width: 100%; height: auto; }
 	justify-content: space-between;
 	align-items: center;
 	padding: 20px;
+	color: #fff
 }
 
   
@@ -242,14 +243,16 @@ svg,img { max-width: 100%; height: auto; }
   .dark-mode .ds-header {
 	background-color: #222;
 	color: #fff;
+	
   }
   
   .dark-mode .ds-header.ds-fixed-header {
+	color: #222;
 	box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.25);
   }
   
   .dark-mode .ds-menu a {
-	color: #FFF;
+	color: #fff;
 	text-decoration: none;
 	font-size: 18px;
 	font-weight: 600;
@@ -289,8 +292,8 @@ svg,img { max-width: 100%; height: auto; }
 /*-----------------------------------------------------------------
   2. >>> Banner Style
 ----------------------------------------------------------------*/
-.ds-banner section{ padding-left: 70px; padding-right: 100px; }
-.ds-banner section h1 span{ display: block; text-transform: uppercase; letter-spacing: 1px;  font-weight: 500; font-size: 16px; padding-bottom: 30px; }
+.ds-banner section{padding: 0; margin: 0;}
+.ds-banner section h1 span{ display: block; text-transform: uppercase; letter-spacing: 1px;  font-weight: 500; font-size: 16px; padding-bottom: 30px; margin-top: 20px;}
 .ds-banner section h1{ font-weight: 600; font-size: 48px; line-height: 60px; color: #000; display: inline-block; }
 
   .dark-mode .ds-banner section h1 span {
@@ -309,6 +312,7 @@ svg,img { max-width: 100%; height: auto; }
 	border: 2px solid #ad64f2;
 	border-radius: 10px;
 	overflow: hidden;
+	margin-top: 40px;
   }
   
   .profile-picture img {
@@ -701,10 +705,11 @@ span.ds-department{ color: #373737; font-weight: 500; font-size: 18px; padding-b
  Responsive XS Style @media (max-width: 767px) 
 -------------------------------------------------------------------------------*/
 @media (max-width: 768px) {
-	.ds-header,.ds-header.ds-fixed-header{ padding: 15px 0; }
+	.ds-header,.ds-header.ds-fixed-header{ padding-top: 15px 0; }
 	.ds-banner,.ds-about-section,.ds-skills-section,.ds-experience-section,.ds-work-section,.ds-work-details-section{ padding-left: 10px; padding-right: 10px; }
 	.ds-logo{ font-size: 0; }
 	.ds-menu a{ font-size: 2.5vw;}
+	.dark-mode .ds-menu a {font-size: 2.5vw;}
 	.ds-banner section{ padding-left: 0;padding-right: 0; }
 	.ds-banner section h1 span{ padding-bottom: 0; }
 	.ds-banner section h1,.ds-work-det-title{ font-size: 30px; line-height: 40px; }
@@ -730,17 +735,7 @@ span.ds-department{ color: #373737; font-weight: 500; font-size: 18px; padding-b
 }
 
 
-@media (min-width: 768px) and (max-width: 991px) {
-	.ds-work-list section{ padding-right: 30px; }
 
-}
-
-@media (min-width: 992px) and (max-width: 1199px) {
-	.ds-banner section{ padding-right: 0; }
-	.ds-work-list section{ padding-right: 30px; padding-bottom:60px; }
-
-
-}
 
 @media(prefers-reduced-motion) {
 	.hidden {
