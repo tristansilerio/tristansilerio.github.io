@@ -285,17 +285,13 @@ svg,img { max-width: 100%; height: auto; }
 	color: #000;
   }
   
-  .dark-mode body {
-	background-color: #000;
-  }
-  
+
 /*-----------------------------------------------------------------
   2. >>> Banner Style
 ----------------------------------------------------------------*/
 .ds-banner section{padding: 0; margin: 0;}
 .ds-banner section h1 span{ display: block; text-transform: uppercase; letter-spacing: 1px;  font-weight: 500; font-size: 16px; padding-bottom: 30px; margin-top: 20px;}
 .ds-banner section h1{ font-weight: 600; font-size: 48px; line-height: 60px; color: #000; display: inline-block; }
-
   .dark-mode .ds-banner section h1 span {
 	color: #fff;
   }
@@ -704,8 +700,8 @@ span.ds-department{ color: #373737; font-weight: 500; font-size: 18px; padding-b
 /*-------------------------------------------------------------------------------
  Responsive XS Style @media (max-width: 767px) 
 -------------------------------------------------------------------------------*/
-@media (max-width: 768px) {
-	.ds-header,.ds-header.ds-fixed-header{ padding-top: 15px 0; }
+@media screen and (max-width: 768px) {
+	.ds-header,.ds-header.ds-fixed-header{ padding-top:10px 0; }
 	.ds-banner,.ds-about-section,.ds-skills-section,.ds-experience-section,.ds-work-section,.ds-work-details-section{ padding-left: 10px; padding-right: 10px; }
 	.ds-logo{ font-size: 0; }
 	.ds-menu a{ font-size: 2.5vw;}
